@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -128,7 +129,7 @@ public class PurchaseOrder {
 	}
 
 	public List<String> fetchAvailableProducts(WebDriver driver) {
-		List<String> products = new ArrayList<>();
+		List<String> products = new LinkedList<String>();
 		List<WebElement> productElements = driver
 				.findElements(By.xpath("//div[@data-test='inventory-item']//div[@data-test='inventory-item-name']"));
 
