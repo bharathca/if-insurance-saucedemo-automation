@@ -6,10 +6,12 @@ import com.selenium.design.Locators;
 import com.testng.base.CommonMethods;
 
 public class LoginPageObjects extends CommonMethods {
-	// Locators - ID
+	// Locators - id
 	private final String userNameField = "user-name";
 	private final String passwordField = "password";
 	private final String loginButton = "login-button";
+	// Locators - xPath
+	private final String loginError = "//h3[@data-test='error']";
 
 	public LoginPageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -25,6 +27,11 @@ public class LoginPageObjects extends CommonMethods {
 
 	public void clickLoginButton() {
 		click(locateElement(Locators.ID, loginButton));
+	}
+	
+	public boolean verifyUserIsLockedOut() {
+		return verifyDisplayed(locateElement(Locators.XPATH, loginError));
+		
 	}
 
 	public ProductsPageObjects performLogin(String userName, String password) {
