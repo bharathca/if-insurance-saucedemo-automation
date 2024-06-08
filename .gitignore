@@ -8,4 +8,5 @@
 
 # Maven
 target/
+test-output/
 

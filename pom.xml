@@ -7,19 +7,41 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
-		<!-- tools version maintenance -->
+		<!-- Tools version maintenance -->
 		<selenium.java.version>4.20.0</selenium.java.version>
+		<testng.version>7.10.2</testng.version>
+		<log4j.core.version>2.23.1</log4j.core.version>
 		<javafaker.version>1.0.2</javafaker.version>
+
+		<!-- Maven compiler maintenance -->
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 
 	<dependencies>
-		
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>${selenium.java.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.core.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
@@ -28,7 +50,6 @@
 			<artifactId>javafaker</artifactId>
 			<version>${javafaker.version}</version>
 		</dependency>
-
 
 	</dependencies>
 
