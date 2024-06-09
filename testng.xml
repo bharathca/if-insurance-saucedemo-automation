@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Sauce Demo Application">
+  <test thread-count="4" name="Execution in Chrome Browser" parallel="classes">
+  <parameter name="browser" value="CHROME"/>  
+    <classes>
+      <class name="com.saucedemo.testcases.ScenarioOnePurchaseOrder"/>
+      <class name="com.saucedemo.testcases.ScenarioFourInputFieldValidations"/>
+      <class name="com.saucedemo.testcases.ScenarioThreeLockedOutUser"/>
+      <class name="com.saucedemo.testcases.ScenarioTwoSortProductItems"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="4" name="Execution in Firefox Browser" parallel="classes">
+  <parameter name="browser" value="FIREFOX"/>  
+    <classes>
+      <class name="com.saucedemo.testcases.ScenarioOnePurchaseOrder"/>
+      <class name="com.saucedemo.testcases.ScenarioFourInputFieldValidations"/>
+      <class name="com.saucedemo.testcases.ScenarioThreeLockedOutUser"/>
+      <class name="com.saucedemo.testcases.ScenarioTwoSortProductItems"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="4" name="Execution in Edge Browser" parallel="classes">
+  <parameter name="browser" value="EDGE"/>  
+    <classes>
+      <class name="com.saucedemo.testcases.ScenarioOnePurchaseOrder"/>
+      <class name="com.saucedemo.testcases.ScenarioFourInputFieldValidations"/>
+      <class name="com.saucedemo.testcases.ScenarioThreeLockedOutUser"/>
+      <class name="com.saucedemo.testcases.ScenarioTwoSortProductItems"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+</suite> <!-- Suite -->

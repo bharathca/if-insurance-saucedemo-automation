@@ -36,10 +36,10 @@ public class WebDriverInstance {
 			break;
 		case FIREFOX:
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			firefoxOptions.addArguments("--start-maximized"); 
 			firefoxOptions.addArguments("--disable-notifications"); 
 			firefoxOptions.addArguments("--incognito");
 			remoteWebDriver.set(new FirefoxDriver(firefoxOptions));
+			getWebDriver().manage().window().maximize();
 			break;
 		case EDGE:
 			EdgeOptions edgeOptions = new EdgeOptions();

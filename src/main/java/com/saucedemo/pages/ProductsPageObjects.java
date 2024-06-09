@@ -15,9 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.java.base.JavaBase;
 import com.java.design.RandomNumberOptions;
 import com.selenium.design.Locators;
-import com.testng.base.CommonMethods;
+import com.testng.base.ApplicationSpecificMethods;
 
-public class ProductsPageObjects extends CommonMethods {
+public class ProductsPageObjects extends ApplicationSpecificMethods {
 	// Locators - xPath
 	private final String productElement = "(//div[text()='replaceText']/ancestor::div[@class='inventory_item'])";
 	private final String productsAvailableElement = "//div[@data-test='inventory-item']";
@@ -107,6 +107,7 @@ public class ProductsPageObjects extends CommonMethods {
 			productDetails.put("description", productDescription);
 			productsAddedToCart.put(productName, productDetails);
 			click(locateElement(Locators.XPATH, actualProductElement, addToCartButtonElement));
+			logInfo(productName+" product is added to the cart");
 		}
 		return productsAddedToCart;
 	}
@@ -164,10 +165,10 @@ public class ProductsPageObjects extends CommonMethods {
 				return addProductsToCart(productNamesAfterSorting, getRandomNumberOfProducts(), false);
 
 			} else {
-				System.err.println("The given sorting order is not there in the sorting dropdown");
+				logError("The given sorting order "+sortingOrder+" is not there in the sorting dropdown");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logError("There is an issue while sorting the products & validating them "+e.getMessage());
 		}
 		return null;
 	}
@@ -183,14 +184,14 @@ public class ProductsPageObjects extends CommonMethods {
 			Collections.sort(productNamesBeforeSorting, Collections.reverseOrder());
 			break;
 		default:
-			System.err.println("The given sorting order is not there in the sorting dropdown");
+			logError("The given sorting order "+sortingOrder+" for product names are not there in the sorting dropdown");
 			break;
 		}
 
 		if (productNamesBeforeSorting.equals(productNamesAfterSorting)) {
-			System.out.println("Sorting Order: " + sortingOrder + " works fine");
+			logInfo("The given sorting order "+sortingOrder+" for product names are working with no issues");
 		} else {
-			System.out.println("Sorting Order: " + sortingOrder + " is not working fine");
+			logError("The given sorting order "+sortingOrder+" for product names are not working fine");
 		}
 	}
 
@@ -205,14 +206,14 @@ public class ProductsPageObjects extends CommonMethods {
 			Collections.sort(productPricesBeforeSorting, Collections.reverseOrder());
 			break;
 		default:
-			System.err.println("The given sorting order is not there in the sorting dropdown");
+			logError("The given sorting order "+sortingOrder+" for product prices are not there in the sorting dropdown");
 			break;
 		}
 
 		if (productPricesBeforeSorting.equals(productPricesAfterSorting)) {
-			System.out.println("Sorting Order: " + sortingOrder + " works fine");
+			logInfo("The given sorting order "+sortingOrder+" for product price are working fine");
 		} else {
-			System.out.println("Sorting Order: " + sortingOrder + " is not working fine");
+			logError("The given sorting order "+sortingOrder+" for product price are not working fine");
 		}
 	}
 }

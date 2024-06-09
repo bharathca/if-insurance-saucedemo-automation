@@ -5,7 +5,6 @@ import java.util.Random;
 import com.java.design.RandomNumberOptions;
 
 public class JavaBase {
-	
 	public static int generateRandomNumber(int range, RandomNumberOptions option) {
 		Random random = new Random();
 		switch (option) {

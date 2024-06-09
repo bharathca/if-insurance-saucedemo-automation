@@ -3,9 +3,9 @@ package com.saucedemo.pages;
 import org.openqa.selenium.WebDriver;
 
 import com.selenium.design.Locators;
-import com.testng.base.CommonMethods;
+import com.testng.base.ApplicationSpecificMethods;
 
-public class CheckoutCompletePageObjects extends CommonMethods{
+public class CheckoutCompletePageObjects extends ApplicationSpecificMethods{
 
 	public CheckoutCompletePageObjects(WebDriver driver) {
 		this.driver = driver;
@@ -19,5 +19,6 @@ public class CheckoutCompletePageObjects extends CommonMethods{
 	
 	public void navigateBackToHome() {
 		click(locateElement(Locators.XPATH, backToHome));
+		logInfo("Navigated to Home Page");
 	}
 }
