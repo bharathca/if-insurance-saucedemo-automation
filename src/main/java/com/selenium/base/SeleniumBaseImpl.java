@@ -1,8 +1,5 @@
 package com.selenium.base;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
@@ -33,7 +30,7 @@ public class SeleniumBaseImpl extends WebDriverInstance implements BrowserDesign
 		try {
 			setWebDriver(Browsers.CHROME, headless);
 			setWait();
-			getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+			getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			getWebDriver().get(url);
 			logInfo("The chrome browser is launched with the application url " + url);
 		} catch (Exception e) {
@@ -45,7 +42,7 @@ public class SeleniumBaseImpl extends WebDriverInstance implements BrowserDesign
 		try {
 			setWebDriver(browser, headless);
 			setWait();
-			getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(90));
+			getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			getWebDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			getWebDriver().get(url);
 			logInfo("The " + browser.toString() + " browser is launched with the application url " + url);
@@ -369,24 +366,5 @@ public class SeleniumBaseImpl extends WebDriverInstance implements BrowserDesign
 
 	public void logError(String message) {
 		log.error(message);
-	}
-
-	/**
-	 * This method is used to initialize the properties from the config file
-	 * 
-	 * @return Properties
-	 */
-	public Properties  initializePropertyFileReader() {
-		try {
-			FileInputStream fileInput = new FileInputStream("./src/test/resources/configurations/default.properties");
-			properties = new Properties();
-			properties.load(fileInput);
-			logInfo("Properties file is loaded");
-		} catch (FileNotFoundException e) {
-			logError("Properties file is not loaded as the file is not found");
-		} catch (IOException e) {
-			logInfo("Properties file is not loaded due to IO Exception");
-		}
-		return properties;
 	}
 }

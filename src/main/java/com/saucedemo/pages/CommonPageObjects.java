@@ -68,6 +68,10 @@ public class CommonPageObjects extends ApplicationSpecificMethods {
 			return false;
 		}
 	}
+	
+	public boolean verifyErrorMessageDisplayed() {
+		return verifyDisplayed(locateElement(Locators.XPATH, inputFieldRequiredErrorMessage));
+	}
 
 	public boolean verifyLandingPageURL(String expectedURL) {
 		return verifyUrl(expectedURL);

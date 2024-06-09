@@ -1,5 +1,7 @@
-package com.saucedemo.testcases;
+package com.saucedemo.stepDefinitions;
 
+
+import java.util.Map;
 
 import com.github.javafaker.Faker;
 import com.saucedemo.pages.CartPageObjects;
@@ -20,4 +22,14 @@ public class BaseTest extends ApplicationSpecificMethods {
 	CheckoutCompletePageObjects checkoutCompletePage = new CheckoutCompletePageObjects(driver);
 	CheckoutOverviewPageObjects checkoutOverview = new CheckoutOverviewPageObjects(driver);
 	Faker faker = new Faker();
+	
+	private Map<String, Map<String, String>> productsAddedInCart;
+
+	public Map<String, Map<String, String>> getProductsAddedInCart() {
+		return productsAddedInCart;
+	}
+
+	public void setProductsAddedInCart(Map<String, Map<String, String>> productsAddedInCart) {
+		this.productsAddedInCart = productsAddedInCart;
+	}
 }

@@ -124,8 +124,8 @@ public class ProductsPageObjects extends ApplicationSpecificMethods {
 		selectDropDownUsingText(sortingDropdownElements, sortingOrder);
 	}
 
-	// Method to perform sorting and validation for different sorting orders
-	public Map<String, Map<String, String>> sortAndValidate(String sortingOrder) {
+	// Method to perform sorting and validation for different sorting orders and add them in the cart
+	public Map<String, Map<String, String>> sortAndAddProductsInCart(String sortingOrder) {
 		try {
 			List<WebElement> sortingOptions = getSortingOptionElements();
 			List<String> sortingOptionTexts = sortingOptions.stream().map(WebElement::getText)

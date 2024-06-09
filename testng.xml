@@ -1,35 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Sauce Demo Application">
-  <test thread-count="4" name="Execution in Chrome Browser" parallel="classes">
+<suite name="Sauce Demo Application" thread-count="1" data-provider-thread-count="6">
+  <test name="Execution in Chrome Browser">
   <parameter name="browser" value="CHROME"/>  
     <classes>
-      <class name="com.saucedemo.testcases.ScenarioOnePurchaseOrder"/>
-      <class name="com.saucedemo.testcases.ScenarioFourInputFieldValidations"/>
-      <class name="com.saucedemo.testcases.ScenarioThreeLockedOutUser"/>
-      <class name="com.saucedemo.testcases.ScenarioTwoSortProductItems"/>
+      <class name="com.saucedemo.testRunner.TestNGRunner"/>
     </classes>
   </test> <!-- Test -->
   
-  <test thread-count="4" name="Execution in Firefox Browser" parallel="classes">
+  <test name="Execution in Firefox Browser">
   <parameter name="browser" value="FIREFOX"/>  
     <classes>
-      <class name="com.saucedemo.testcases.ScenarioOnePurchaseOrder"/>
-      <class name="com.saucedemo.testcases.ScenarioFourInputFieldValidations"/>
-      <class name="com.saucedemo.testcases.ScenarioThreeLockedOutUser"/>
-      <class name="com.saucedemo.testcases.ScenarioTwoSortProductItems"/>
+      <class name="com.saucedemo.testRunner.TestNGRunner"/>
     </classes>
   </test> <!-- Test -->
   
-  <test thread-count="4" name="Execution in Edge Browser" parallel="classes">
+  <test name="Execution in Edge Browser">
   <parameter name="browser" value="EDGE"/>  
     <classes>
-      <class name="com.saucedemo.testcases.ScenarioOnePurchaseOrder"/>
-      <class name="com.saucedemo.testcases.ScenarioFourInputFieldValidations"/>
-      <class name="com.saucedemo.testcases.ScenarioThreeLockedOutUser"/>
-      <class name="com.saucedemo.testcases.ScenarioTwoSortProductItems"/>
+      <class name="com.saucedemo.testRunner.TestNGRunner"/>
     </classes>
   </test> <!-- Test -->
-  
-  
 </suite> <!-- Suite -->

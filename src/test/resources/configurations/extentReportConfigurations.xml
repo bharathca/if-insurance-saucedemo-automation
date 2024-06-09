@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    
+    <configuration>
+    
+        <theme>dark</theme>
+        
+        <encoding>UTF-8</encoding>
+        
+        <protocol>https</protocol>
+        
+        <documentTitle>Sauce Demo - Test Execution Report</documentTitle>
+        
+        <reportName>Automation Report</reportName>
+        
+        <testViewChartLocation>top</testViewChartLocation>
+        
+        <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
+        
+        <thumbnailForBase64>true</thumbnailForBase64>
+        
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+                    
+                });
+            ]]>
+        </scripts>
+        
+        <styles>
+            <![CDATA[
+                
+            ]]>
+        </styles>
+    
+    </configuration>
+
+</extentreports>
